@@ -12,7 +12,6 @@
 
 @implementation RootViewController
 
-/*
 //
 // + ボタンが押されたときの処理
 //
@@ -32,7 +31,6 @@
 	// インスタンスしたフォームをリリース
 	[formViewController release];
 }
- */
 
 #pragma mark -
 #pragma mark View lifecycle
