@@ -11,6 +11,24 @@
 
 @implementation FormViewController
 
+//
+// キャンセルボタンが押されたときの処理
+//
+- (IBAction)pressCancelButton:(id)sender {
+
+	// 自分自身を閉じる
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+//
+// 保存ボタンが押されたときの処理
+//
+- (IBAction)pressSaveButton:(id)sender {
+	
+	// 自分自身を閉じる
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

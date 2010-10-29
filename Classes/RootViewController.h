@@ -11,4 +11,7 @@
 @interface RootViewController : UITableViewController {
 }
 
+// + ボタンが押されたときの処理
+- (IBAction)pressAddButton:(id)sender;
+
 @end

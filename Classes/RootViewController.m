@@ -8,9 +8,29 @@
 
 #import "RootViewController.h"
 
+#import "FormViewController.h"
 
 @implementation RootViewController
 
+//
+// + ボタンが押されたときの処理
+//
+- (IBAction)pressAddButton:(id)sender {
+	
+	// デバッグ出力。
+	NSLog(@"Add button pressed.");
+	
+	// フォームの view controller をインスタンス。
+	FormViewController *formViewController
+		= [[FormViewController alloc] initWithNibName:@"FormViewController"
+											   bundle:nil];
+	
+	// modal view として表示。
+	[self presentModalViewController:formViewController animated:YES];
+	
+	// インスタンスしたフォームをリリース
+	[formViewController release];
+}
 
 #pragma mark -
 #pragma mark View lifecycle
