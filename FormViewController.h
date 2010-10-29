@@ -13,10 +13,12 @@
 
 }
 
+/*
 // キャンセルボタンを押されたときの処理
 - (IBAction)pressCancelButton:(id)sender;
 
  // 保存ボタンを押されたときの処理
 - (IBAction)pressSaveButton:(id)sender;
+ */
 
 @end

@@ -11,6 +11,7 @@
 
 @implementation FormViewController
 
+/*
 //
 // キャンセルボタンが押されたときの処理
 //
@@ -28,6 +29,7 @@
 	// 自分自身を閉じる
 	[self dismissModalViewControllerAnimated:YES];
 }
+ */
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
