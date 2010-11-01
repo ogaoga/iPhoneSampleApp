@@ -25,6 +25,11 @@
 		= [[FormViewController alloc] initWithNibName:@"FormViewController"
 											   bundle:nil];
 	
+	/*
+	// 保存する配列を渡す。
+	[formViewController setRecordsArray:records];
+	 */
+
 	// modal view として表示。
 	[self presentModalViewController:formViewController animated:YES];
 	
@@ -36,19 +41,43 @@
 #pragma mark View lifecycle
 
 /*
+//
+// view が読み込まれた後に呼び出される処理。
+//
 - (void)viewDidLoad {
+	// 親クラスの viewDidLoad を呼び出す。
+	// 消してはいけない。
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	// records のインスタンス、初期化。
+	records = [[NSMutableArray alloc] init];
 }
-*/
+ */
 
 /*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+//
+// view が解放された後に呼び出される処理。
+//
+- (void)viewDidUnload {
+	// records を解放。
+	[records release];
 }
-*/
+ */
+
+//
+// このビューが表示される直前に呼び出される
+//
+/*
+- (void)viewWillAppear:(BOOL)animated {
+	// 親クラスの viewWillAppear を呼び出す。
+	// 消してはいけない。
+    [super viewWillAppear:animated];
+	
+	// 配列の中身をデバッグ出力
+	NSLog(@"%@", [records description]);
+}
+ */
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -169,12 +198,6 @@
     
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
 
 - (void)dealloc {
     [super dealloc];

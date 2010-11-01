@@ -11,6 +11,15 @@
 
 @implementation FormViewController
 
+/*
+//
+// 保存する配列をセット
+//
+- (void)setRecordsArray:(NSMutableArray*)array {
+	records = array;
+}
+ */
+
 //
 // キャンセルボタンが押されたときの処理
 //
@@ -27,6 +36,30 @@
 
 	// 入力値をコンソールに出力してみる。
 	NSLog(@"%@ %@ %@", dateField.text, amountField.text, noteField.text);
+	
+	/*
+	//
+	// 保存処理
+	//
+
+	// 日付の保存のため、テキストから日付型に変換する処理。
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy/MM/dd"];
+	NSDate *dateValue = [dateFormatter dateFromString:dateField.text];
+	[dateFormatter release];
+	
+	// 金額保存のため、テキストから数値型に変換する処理
+	NSNumber *amountValue = [NSNumber numberWithInt:[amountField.text intValue]];
+
+	// NSDictinary を生成
+	NSDictionary *record = [NSDictionary dictionaryWithObjectsAndKeys:
+							dateValue, @"date",
+							amountValue, @"amount",
+							noteField.text, @"note", nil];
+
+	// 配列に追加する。
+	[records addObject:record];
+	 */
 	
 	// 自分自身を閉じる
 	[self dismissModalViewControllerAnimated:YES];
