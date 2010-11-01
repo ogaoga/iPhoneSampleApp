@@ -10,7 +10,14 @@
 
 
 @interface FormViewController : UIViewController {
-
+	/*
+	// 日付の入力フィールドの IBOutlet
+	IBOutlet UITextField *dateField;
+ 	// 金額の入力フィールドの IBOutlet
+	IBOutlet UITextField *amountField;
+	// 用途の入力フィールドの IBOutlet
+	IBOutlet UITextField *noteField;
+	 */
 }
 
 // キャンセルボタンを押されたときの処理
