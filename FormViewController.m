@@ -25,10 +25,8 @@
 //
 - (IBAction)pressSaveButton:(id)sender {
 
-	/*
 	// 入力値をコンソールに出力してみる。
 	NSLog(@"%@ %@ %@", dateField.text, amountField.text, noteField.text);
-	 */
 	
 	// 自分自身を閉じる
 	[self dismissModalViewControllerAnimated:YES];
