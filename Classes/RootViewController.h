@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController {
-	/*
+
 	// 家計簿データを保存する配列。
 	// プログラム内で追加、変更があるので Mutable。
 	NSMutableArray *records;
-	 */
 }
 
 // + ボタンが押されたときの処理

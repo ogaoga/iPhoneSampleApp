@@ -11,14 +11,12 @@
 
 @implementation FormViewController
 
-/*
 //
 // 保存する配列をセット
 //
 - (void)setRecordsArray:(NSMutableArray*)array {
 	records = array;
 }
- */
 
 //
 // キャンセルボタンが押されたときの処理
@@ -37,7 +35,6 @@
 	// 入力値をコンソールに出力してみる。
 	NSLog(@"%@ %@ %@", dateField.text, amountField.text, noteField.text);
 	
-	/*
 	//
 	// 保存処理
 	//
@@ -59,7 +56,6 @@
 
 	// 配列に追加する。
 	[records addObject:record];
-	 */
 	
 	// 自分自身を閉じる
 	[self dismissModalViewControllerAnimated:YES];
