@@ -17,5 +17,7 @@
 
 // + ボタンが押されたときの処理
 - (IBAction)pressAddButton:(id)sender;
+// Graph ボタンが押されたときの処理
+- (IBAction)pressGraphButton:(id)sender;
 
 @end
