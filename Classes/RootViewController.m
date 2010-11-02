@@ -35,6 +35,19 @@
 	[formViewController release];
 }
 
+//
+// 合計の計算と表示
+//
+- (void)showSum {
+	// 合計の計算と表示。
+	// タイトル部分に表示する。
+	int sum = 0;
+	for ( NSDictionary *record in records ) {
+		sum += [[record objectForKey:@"amount"] intValue];
+	}
+	self.navigationItem.title = [NSString stringWithFormat:@"合計 %d円", sum];	
+}
+
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -73,6 +86,9 @@
 	// UITableViewController を継承したクラスから TableView に
 	// アクセスする場合、下記のように記述する。
 	[self.tableView reloadData];
+	
+	// 合計の計算と表示。
+	[self showSum];
 }
 
 /*
