@@ -69,12 +69,10 @@
 	// 配列の中身をデバッグ出力
 	NSLog(@"%@", [records description]);
 
-	/*
 	// データの再描画を行う
 	// UITableViewController を継承したクラスから TableView に
 	// アクセスする場合、下記のように記述する。
 	[self.tableView reloadData];
-	 */
 }
 
 /*
@@ -117,11 +115,12 @@
 // 指定のセクションの中の行数を返す。
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
 	/*
+    return 0;
+	 */
+
 	// 表示する行の数、すなわち records の数を返す。
 	return [records count];
-	 */
 }
 
 //
@@ -133,17 +132,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		/*
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		 */
 		// セルの種類を変更するため、initWithStyle に渡す値を変更。
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
 									   reuseIdentifier:CellIdentifier] autorelease];
-		 */
     }
     
 	// Configure the cell.
 
-	/*
 	// 表示するデータは、配列から呼び出す。
 	NSDictionary *record = [records objectAtIndex:indexPath.row];
 	
@@ -159,7 +157,6 @@
 	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", dateString, noteString];
 	NSNumber *amountValue = [record objectForKey:@"amount"];
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d円", [amountValue intValue]];	 
-	 */
 
     return cell;
 }
