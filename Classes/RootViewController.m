@@ -10,6 +10,7 @@
 
 #import "FormViewController.h"
 #import "GraphViewController.h"
+#import "DetailViewController.h"
 
 @implementation RootViewController
 
@@ -231,6 +232,9 @@
 	NSNumber *amountValue = [record objectForKey:@"amount"];
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d円", [amountValue intValue]];	 
 
+	// cell のスタイルをセット
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
     return cell;
 }
 
@@ -278,6 +282,9 @@
 #pragma mark -
 #pragma mark Table view delegate
 
+//
+// セルが選択されたときに呼ばれる
+//
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	/*
@@ -287,6 +294,22 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
+	
+	// フォームの view controller をインスタンス。
+	DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController"
+																						bundle:nil];
+	// データの配列と、表示対象のインデックスを指定
+	[detailViewController setRecordsArray:records];
+	[detailViewController setIndex:indexPath.row];
+	
+	// navigation controller にプッシュ
+	[self.navigationController pushViewController:detailViewController animated:YES];
+	
+	// インスタンスした view controller をリリース。
+	[detailViewController release];
+	
+	// 選択されたセルのハイライトを解除
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

@@ -17,6 +17,8 @@
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		751C9EF11279B1EF0005333B /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C9EEF1279B1EF0005333B /* FormViewController.m */; };
 		751C9EF21279B1EF0005333B /* FormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 751C9EF01279B1EF0005333B /* FormViewController.xib */; };
+		75C3120D12819EEC00ED4CF7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C3120B12819EEC00ED4CF7 /* DetailViewController.m */; };
+		75C3120E12819EEC00ED4CF7 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C3120C12819EEC00ED4CF7 /* DetailViewController.xib */; };
 		A911EE6E1280732200624305 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A911EE6C1280732200624305 /* GraphViewController.m */; };
 		A911EE6F1280732200624305 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A911EE6D1280732200624305 /* GraphViewController.xib */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,9 @@
 		751C9EEE1279B1EF0005333B /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		751C9EEF1279B1EF0005333B /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
 		751C9EF01279B1EF0005333B /* FormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormViewController.xib; sourceTree = "<group>"; };
+		75C3120A12819EEC00ED4CF7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		75C3120B12819EEC00ED4CF7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		75C3120C12819EEC00ED4CF7 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iPhoneSampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPhoneSampleApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A911EE6B1280732200624305 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		A911EE6C1280732200624305 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
@@ -90,6 +95,9 @@
 				A911EE6B1280732200624305 /* GraphViewController.h */,
 				A911EE6C1280732200624305 /* GraphViewController.m */,
 				A911EE6D1280732200624305 /* GraphViewController.xib */,
+				75C3120A12819EEC00ED4CF7 /* DetailViewController.h */,
+				75C3120B12819EEC00ED4CF7 /* DetailViewController.m */,
+				75C3120C12819EEC00ED4CF7 /* DetailViewController.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				751C9EF21279B1EF0005333B /* FormViewController.xib in Resources */,
 				A911EE6F1280732200624305 /* GraphViewController.xib in Resources */,
+				75C3120E12819EEC00ED4CF7 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +201,7 @@
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				751C9EF11279B1EF0005333B /* FormViewController.m in Sources */,
 				A911EE6E1280732200624305 /* GraphViewController.m in Sources */,
+				75C3120D12819EEC00ED4CF7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
