@@ -11,30 +11,33 @@
 
 @implementation GraphViewController
 
-/**
- * 表示する URL をセットする
- */
+//
+// 表示する URL をセットする
+//
 - (void)setURLString:(NSString*)urlString {
+	if ( url == nil ) {
+		// URL がインスタンスされていない場合には、インスタンスする。
+		url = [[NSMutableString alloc] initWithCapacity:0];
+	}
 	[url setString:urlString];
 }
 
-/**
- * 閉じる処理
- */
+//
+// 閉じる処理
+//
 - (IBAction)pressDoneButton:(id)sender {
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+/*
+ // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-
-		// URL を保持する NSMutableString をインスタンス。
-		url = [[NSMutableString alloc] initWithCapacity:0];
     }
     return self;
 }
+*/
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -50,9 +53,11 @@
 	[super viewWillAppear:animated];	// 親クラスの呼び出し。消してはいけない。
 	
 	// Web View にリクエストを行う。
-	NSLog(@"%@", url);
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-	[webView loadRequest:request];
+	if ( url ) {
+		NSLog(@"%@", url);
+		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+		[webView loadRequest:request];
+	}
 }
 
 /*
