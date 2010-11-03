@@ -18,7 +18,7 @@
 
 // Done ボタンを押したときの処理
 - (IBAction)pressDoneButton:(id)sender;
-// URL を受け取る変数
+// URL を受け取るためのメソッド
 - (void)setURLString:(NSString*)urlString;
 
 @end
