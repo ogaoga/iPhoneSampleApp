@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-
+#import "FormViewController.h"
 
 @implementation DetailViewController
 
@@ -23,6 +23,25 @@
 //
 - (void)setRecordsArray:(NSMutableArray*)array {
 	records = array;
+}
+
+//
+// Edit ボタンを押されたときの処理
+//
+- (IBAction)pressEditButton:(id)sender {
+
+	// form view の呼び出し。
+	FormViewController *formViewController = [[FormViewController alloc] initWithNibName:@"FormViewController"
+																				  bundle:nil];
+	// データの配列とインデックスを指定。
+	[formViewController setRecordsArray:(NSMutableArray*)records];
+	[formViewController setIndex:index];
+	
+	// modal view として表示。
+	[self presentModalViewController:formViewController animated:YES];
+	
+	// インスタンスしたフォームをリリース
+	[formViewController release];
 }
 
 #pragma mark -
@@ -54,6 +73,15 @@
 	NSString *dateString = [formatter stringFromDate:dateValue];
 	[formatter release];	// formatter のリリースを忘れずに。
 	self.navigationItem.title = dateString;
+	
+	// Edit ボタンの設置
+	// ボタンの種類と、ボタンを押されたときにメッセージを送信するオブジェクト、メソッドを指定。
+	UIBarButtonItem *editButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+																					target:self
+																					action:@selector(pressEditButton:)];
+	self.navigationItem.rightBarButtonItem = editButtonItem;
+	// オブジェクトをリリース。忘れずに。
+	[editButtonItem release];
 }
 
 /*

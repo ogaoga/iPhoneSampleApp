@@ -19,6 +19,13 @@
 }
 
 //
+// 扱うデータのインデックスを設定。
+//
+- (void)setIndex:(int)indexValue {
+	index = indexValue;
+}
+
+//
 // キャンセルボタンが押されたときの処理
 //
 - (IBAction)pressCancelButton:(id)sender {
@@ -54,22 +61,32 @@
 							amountValue, @"amount",
 							noteField.text, @"note", nil];
 
-	// 配列に追加する。
-	[records addObject:record];
+	// 新規の場合は配列に追加する。
+	// 編集の場合は差し替え
+	if ( index == INDEX_OF_NEW_DATA ) {
+		[records addObject:record];
+	}
+	else {
+		[records replaceObjectAtIndex:index withObject:record];
+	}
 	
 	// 自分自身を閉じる
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+//
+// 初期化時に呼ばれる
+//
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+		
+		// 指定のない場合は、新規のデータとして扱うように、
+		// INDEX_OF_NEW_DATA で初期化しておく。
+		index = INDEX_OF_NEW_DATA;
     }
     return self;
 }
-*/
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -77,6 +94,34 @@
     [super viewDidLoad];
 }
 */
+
+//
+// 表示前の処理。編集の場合には、そのデータをセットする。
+//
+- (void)viewWillAppear:(BOOL)animated {
+	if ( index != INDEX_OF_NEW_DATA ) {
+		// データの読み出し
+		NSDictionary *record = [records objectAtIndex:index];
+
+		//
+		//  値を各 text field にセット
+		//
+		
+		// date
+		NSDate *dateValue = [record objectForKey:@"date"];
+		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+		[formatter setDateFormat:@"yyyy/MM/dd"];
+		dateField.text = [formatter stringFromDate:dateValue];
+		[formatter release];	// formatter のリリースを忘れずに。
+
+		// amount
+		amountField.text = [NSString stringWithFormat:@"%d",
+					   [[record objectForKey:@"amount"] intValue]];
+		
+		// note
+		noteField.text = [record objectForKey:@"note"];
+	}
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

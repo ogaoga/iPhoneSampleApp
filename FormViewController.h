@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// 編集ではなく、新規の場合には -1 を指定する。
+#define INDEX_OF_NEW_DATA (-1)
 
 @interface FormViewController : UIViewController {
 
@@ -20,6 +22,8 @@
 	
 	// 配列を参照するポインタ
 	NSMutableArray *records;
+	// 扱うデータのインデックス
+	int index;
 }
 
 // キャンセルボタンを押されたときの処理
@@ -30,5 +34,8 @@
 
 // 配列を参照するポインタをセットする処理
 - (void)setRecordsArray:(NSMutableArray*)array;
+
+// 扱うデータのインデックスを設定。
+- (void)setIndex:(int)indexValue;
 
 @end
