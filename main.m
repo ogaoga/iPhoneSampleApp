@@ -6,6 +6,8 @@
 //  Copyright 2010 ogaoga.org. All rights reserved.
 //
 
+// コメントでも追加してみたりして。
+
 #import <UIKit/UIKit.h>
 
 int main(int argc, char *argv[]) {
